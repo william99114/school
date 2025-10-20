@@ -197,14 +197,11 @@ $username   = $isLoggedIn ? ($_SESSION['user']['name'] ?? '') : '';
   <nav class="nav"> <!-- 右側導覽連結 -->
     <?php if ($isLoggedIn): ?> <!-- 若已登入 -->
       <!-- 問候使用者名稱（做 XSS 轉義） -->
-      <span class="badge">Hi，<?= htmlspecialchars($username, ENT_QUOTES, 'UTF-8') ?></span>
       <a href="/auth2fa/public/dashboard.php">主頁</a>  <!-- 連到主頁 -->
       <a href="/auth2fa/public/logout.php">登出</a>      <!-- 登出 -->
     <?php else: ?> <!-- 若未登入，顯示登入/註冊 -->
       <!-- 若目前頁面是登入，則加上 .active 做高亮 -->
       <a href="/auth2fa/public/login.php"    class="<?= ($pageTitle==='登入')  ? 'active' : '' ?>">登入</a>
-      <!-- 若目前頁面是註冊，則加上 .active 做高亮 -->
-      <a href="/auth2fa/public/register.php" class="<?= ($pageTitle==='註冊') ? 'active' : '' ?>">註冊</a>
     <?php endif; ?>
   </nav>
 </header>

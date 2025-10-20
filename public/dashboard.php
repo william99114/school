@@ -7,7 +7,7 @@ $pageTitle = '主頁';
 include __DIR__ . '/../templates/header.php';
 ?>
 <div class="card">
-  <h2>歡迎，<?=htmlspecialchars($user['name'])?></h2>
+  <h2>歡迎，<?=htmlspecialchars($user['student_id'])?></h2>
   <p>您的帳號（學校信箱）：<?=htmlspecialchars($user['email'])?></p>
   <p><a class="link" href="./logout.php">登出</a></p>
 </div>
